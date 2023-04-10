@@ -1,7 +1,18 @@
-import Pyro4
 
- mi_objeto = Pyro4.Proxy("PYRO:example.hola@192.168.102.100:9090")
+import zmq
 
- print(mi_objeto.hi("Mundo"))
+context = zmq.Context()
 
+#  Socket to talk to server
+print("Connecting to hello world server...")
+socket = context.socket(zmq.REQ)
+socket.connect("tcp://localhost:5555")
 
+#  Do 10 requests, waiting each time for a response
+for request in range(1):
+    print(f"Sending request {request} ...")
+    socket.send_string("a endCOMS")
+
+    #  Get the reply.
+    message = socket.recv_string()
+    print(f"Received reply {request} [ {message} ]")

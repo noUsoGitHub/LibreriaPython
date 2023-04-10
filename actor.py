@@ -8,6 +8,7 @@ def reciveMessage():
     for m in temp[1:]:
         mensaje+= m + " "
     return mensaje
+
 def processMessage(mensaje):
 
     archivo = open('baseTemporal.txt', 'a')              # Abrir el archivo en modo escritura
