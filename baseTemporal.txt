@@ -13,3 +13,6 @@ Hello
 Hello 
 endCOMS 
 endCOMS 
+Hola mundo desde otro pc 
+Hola mundo desde otro pc 
+Hola mundo desde otro pc endCOMS 
